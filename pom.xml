@@ -9,7 +9,7 @@
 
   <groupId>hudson.plugins.keepSlaveOffline</groupId>
   <artifactId>keepSlaveOffline</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>hpi</packaging>
   <url>http://wiki.jenkins-ci.org/display/JENKINS/Keep+slave+offline</url>
 
