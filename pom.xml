@@ -11,7 +11,7 @@
   <artifactId>keepSlaveOffline</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>hpi</packaging>
-  <url></url>
+  <url>http://wiki.jenkins-ci.org/display/JENKINS/Keep+slave+offline</url>
 
   <developers>
     <developer>
