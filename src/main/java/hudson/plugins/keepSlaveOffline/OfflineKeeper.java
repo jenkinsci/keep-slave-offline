@@ -11,10 +11,17 @@ import hudson.slaves.NodeProperty;
 import hudson.slaves.NodePropertyDescriptor;
 
 public class OfflineKeeper extends NodeProperty<Node>{
+    
+        private String reason;
 	
 	@DataBoundConstructor
-	public OfflineKeeper(){
+	public OfflineKeeper(String reason){
+            this.reason=reason;
 	}
+        
+        public String getReason(){
+            return reason;
+        }
 	
 	@Extension // this marker indicates Hudson that this is an implementation of an extension point.
     public static final class NodePropertyDescriptorImpl extends NodePropertyDescriptor {
@@ -25,7 +32,7 @@ public class OfflineKeeper extends NodeProperty<Node>{
         	super(OfflineKeeper.class);
         }
 		
-		/**
+	/**
          * This human readable name is used in the configuration screen.
          */
         public String getDisplayName() {

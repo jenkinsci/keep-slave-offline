@@ -15,9 +15,10 @@ public class KeepOfflineListener extends ComputerListener{
 	
 	@Override
 	public void onOnline(Computer c, TaskListener listener) throws IOException, InterruptedException {
-		if(c.getNode().getNodeProperties().get(OfflineKeeper.class) != null){
+                OfflineKeeper keeper = c.getNode().getNodeProperties().get(OfflineKeeper.class);
+		if(keeper != null){
 			LOGGER.info("This node (" + c.getNode().getDisplayName() + ") will be kept offline, slave is configured to be kept offline even after restart.");
-			c.setTemporarilyOffline(true, OfflineCause.SimpleOfflineCause.create(Messages._Node_Kept_Offline()));
+                        c.setTemporarilyOffline(true,OfflineCause.SimpleOfflineCause.create(Messages._Node_Kept_Offline(keeper.getReason())));
 		}
     }
 
